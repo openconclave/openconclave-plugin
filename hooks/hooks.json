@@ -6,8 +6,20 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/start-server.sh\"",
-            "timeout": 15000
+            "command": "bun run \"${CLAUDE_PLUGIN_ROOT}/hooks/start-server.ts\"",
+            "timeout": 20000
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bun run \"${CLAUDE_PLUGIN_ROOT}/hooks/stop-server.ts\"",
+            "timeout": 10000
           }
         ]
       }
